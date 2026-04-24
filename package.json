@@ -1,0 +1,25 @@
+{
+  "name": "demosite_001",
+  "version": "1.0.0",
+  "description": "架空のアパレルブランド **MONO** の静的Webサイト（HTMLモック）です。ミニマルな白・黒・グレーのトーン、ルーズフィットの定番アイテムを想定したデモ用ページです。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "split-assets": "node scripts/split-composite.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuyakobayashi-arch/demosite_001.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yuyakobayashi-arch/demosite_001/issues"
+  },
+  "homepage": "https://github.com/yuyakobayashi-arch/demosite_001#readme",
+  "dependencies": {
+    "jimp": "^0.22.12"
+  }
+}

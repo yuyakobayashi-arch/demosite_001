@@ -284,7 +284,30 @@ main {
   }
 }
 
-/* Placeholder blocks (no images) */
+/* 写真フレーム（3:4 / 16:9 共通。object-fit: cover） */
+figure.media {
+  margin: 0;
+  background: #e5e5e5;
+  overflow: hidden;
+}
+
+figure.media-34 {
+  aspect-ratio: 3 / 4;
+}
+
+figure.media-169 {
+  aspect-ratio: 16 / 9;
+}
+
+figure.media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 旧: 色面プレースホルダ。画像と併用時は中身なし用に */
 .ph {
   aspect-ratio: 3 / 4;
   background: var(--line);
@@ -295,12 +318,31 @@ main {
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
+  overflow: hidden;
+}
+
+.ph img,
+.ph-wide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.ph.ph--img,
+.ph-wide.ph--img {
+  padding: 0;
+  display: block;
+  color: inherit;
+  align-items: initial;
 }
 
 .ph-wide {
   aspect-ratio: 16 / 9;
   background: #d0d0d0;
   margin-bottom: 0.5rem;
+  overflow: hidden;
 }
 
 .product-card h3 {
