@@ -423,14 +423,17 @@ form button[type="submit"] {
   margin-top: 0.5rem;
 }
 
-/* Lookbook */
+/* Lookbook — 行の高さを揃えず、各枠の aspect で収める（--max 幅に収まる） */
 .look-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
-  margin: 0 -0.5rem;
+  margin: 0;
+  max-width: 100%;
+  align-items: start;
+  box-sizing: border-box;
 }
 
 @media (max-width: 40rem) {
@@ -439,12 +442,29 @@ form button[type="submit"] {
   }
 }
 
+.look-item {
+  min-width: 0;
+}
+
 .look-item .ph,
 .look-item .ph-wide {
   border: none;
   margin: 0;
-  height: 100%;
-  min-height: 14rem;
+  min-height: 0;
+  height: auto;
+  max-height: none;
+}
+
+/* ヨコ（16:9） */
+.look-item .ph-wide.ph--img {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+/* タテは 3:4 だと 50% 幅列で高さが出過ぎるため 4:5 に抑える */
+.look-item .ph.ph--img {
+  aspect-ratio: 4 / 5;
+  width: 100%;
 }
 
 .lead {
