@@ -436,6 +436,12 @@ form button[type="submit"] {
   box-sizing: border-box;
 }
 
+/* ルックブックのみ: 2 カラム枠の最大幅（セクション 1024px より狭く、横伸びを抑える） */
+.page-lookbook .section .look-row {
+  max-width: min(100%, 48rem);
+  margin-inline: auto;
+}
+
 @media (max-width: 40rem) {
   .look-row {
     grid-template-columns: 1fr;
