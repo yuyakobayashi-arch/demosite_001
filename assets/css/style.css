@@ -423,27 +423,39 @@ form button[type="submit"] {
   margin-top: 0.5rem;
 }
 
-/* Lookbook — 行の高さを揃えず、各枠の aspect で収める（--max 幅に収まる） */
-.look-row {
+/* Lookbook ページ — 1 列・中央寄せ */
+.page-lookbook .look-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  max-width: min(100%, 32rem);
+  margin-inline: auto;
+  width: 100%;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+}
+
+.page-lookbook .look-item {
+  width: 100%;
+  max-width: 32rem;
+}
+
+/* 旧: 2 列グリッド。他で未使用のため、将来の 2 列用に .look-row--2col のみで有効化可能 */
+.look-row--2col {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
-  margin: 0;
   max-width: 100%;
   align-items: start;
   box-sizing: border-box;
 }
 
-/* ルックブックのみ: 2 カラム枠の最大幅（セクション 1024px より狭く、横伸びを抑える） */
-.page-lookbook .section .look-row {
-  max-width: min(100%, 48rem);
-  margin-inline: auto;
-}
-
 @media (max-width: 40rem) {
-  .look-row {
+  .look-row--2col {
     grid-template-columns: 1fr;
   }
 }
